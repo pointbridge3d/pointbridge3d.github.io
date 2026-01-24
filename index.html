@@ -90,7 +90,12 @@ section {
 }
 
 .author-row-new { 
-    text-align: center; 
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 .author-row-new a {
@@ -422,6 +427,7 @@ pre {
                 <span class="author-block">
                     <a href="https://homes.cs.washington.edu/~abhgupta/">Abhishek Gupta</a><sup>3</sup>,
                 </span>
+                <span style="flex-basis: 100%; width: 0;"></span>
                 <span class="author-block">
                     <a href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>3</sup>,
                 </span>
