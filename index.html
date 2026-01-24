@@ -1,0 +1,773 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    /* margin: 16px 0px; */
+    margin: 0px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+<link rel="icon" type="image/x-icon" href="mfiles/images/favicon.png">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title> Point Bridge: 3D Representations for Cross Domain Policy Learning</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="Point Bridge: 3D Representations for Cross Domain Policy Learning"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:title" content="Point Bridge: 3D Representations for Cross Domain Policy Learning">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+    </head>
+
+ <body>
+
+
+<div class="container">
+    <div class="paper-title">
+    <h1> 
+        Point Bridge: 3D Representations for Cross Domain Policy Learning
+    </div>
+
+    <div id="authors">
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="https://arxiv.org/pdf/2601.16212v1">
+                        <span class="material-icons"> description </span> 
+                    Paper
+                </a>
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="https://arxiv.org/abs/2601.16212v1">
+                        <span class="material-icons"> description </span> 
+                    arXiv
+                </a>
+            <div class="paper-btn-coming-soon">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> code </span>
+                    Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <!-- <div class="embed-container2">
+        <iframe width="560" height="315" src="./mfiles/final_teaser.mp4" title="Teaser video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <style>
+        .embed-container2 {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        }
+        .embed-container2 iframe,
+        .embed-container2 object,
+        .embed-container2 embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        }
+    </style> -->
+
+    <!-- <br> -->
+
+    <!-- <section>
+        <hr>
+        <br>
+
+        <div class="embed-container">
+            <iframe width="560" height="315" src="se " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <style>
+            .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            }
+            .embed-container iframe,
+            .embed-container object,
+            .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            }
+        </style>
+    </section> -->
+    
+    <section id="abstract"/>
+        <hr>
+        <h2>Abstract</h2>
+        <div class="flex-row">
+            <p>
+                Robot foundation models are starting to realize some of the promise of developing
+                generalist robotic agents, but progress remains bottlenecked by the availability of
+                large-scale real-world robotic manipulation datasets. Simulation and synthetic data
+                generation are a promising alternative to address the need for data, but the utility
+                of synthetic data for training visuomotor policies still remains limited due to the
+                visual domain gap between the two domains. In this work, we introduce POINT
+                BRIDGE, a framework that uses unified domain-agnostic point-based representations
+                to unlock the potential of synthetic simulation datasets and enable zero-shot
+                sim-to-real policy transfer without explicit visual or object-level alignment across
+                domains. Point Bridge combines automated point-based representation extraction via
+                Vision-Language Models (VLMs), transformer-based policy learning, and
+                inference-time pipelines that balance accuracy and computational efficiency to
+                establish a system that can train capable real-world manipulation agents with purely
+                synthetic data. Point Bridge can further benefit from co-training on small sets of
+                real-world demonstrations, training high-quality manipulation agents that substantially 
+                outperform prior vision-based sim-and-real co-training approaches. POINT
+                BRIDGE yields improvements of up to 44% on zero-shot sim-to-real transfer and up
+                to 66% when co-trained with a small amount of real data. Point Bridge also 
+                facilitates multi-task learning.
+            </p>
+        </div>
+    </section>
+    <section id="method"/>
+
+        <br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/intro.png" style="width:900">
+            </div>
+        </center>
+
+        <!-- Video style -->
+        <style>
+            select {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+        
+            video {
+                display: block;
+                max-width: 500px;
+                margin-top: 20px;
+            }
+        </style>
+    </section>
+
+    <section>
+        <!-- <hr>
+        <h2>Proposed Framework</h2>
+        <p>
+        </p>
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/intro.pdf" style="width:900">
+            </div>
+        </center>
+        <br><br> -->
+
+        <hr>
+        <h2>Zero-shot Sim-to-Real Transfer</h2>
+        <br><br>
+
+        We evaluate Point Bridge for zero-shot sim-to-real transfer on 3 simulated tasks. We observe 
+        that Point Bridge’s scene-filtering strategy produces domain-invariant representations, 
+        outperforming the strongest baseline by 39% in single-task transfer and 44% in multitask transfer.
+        We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
+        
+        Task: <select id="taskSelect1">
+            <option value="stack_bowls">stack bowls</option>
+            <option value="bowl_on_plate">put bowl on plate</option>
+            <option value="mug_on_plate">put mug on plate</option>
+        </select>    
+        Object: <select id="objectSelect1">
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+        </select>    
+        Trajectory: <select id="trajectorySelect1">
+            <option value="traj1">trajectory 1</option>
+            <option value="traj2">trajectory 2</option>
+        </select>
+    
+        <div class="video-container">
+            <video id="videoPlayer" width="640" height="360" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <script>
+            const taskSelect1 = document.getElementById('taskSelect1');
+            const objectSelect1 = document.getElementById('objectSelect1');
+            const trajectorySelect1 = document.getElementById('trajectorySelect1');
+            const videoSource1 = document.getElementById('videoSource');
+            const videoPlayer1 = document.getElementById('videoPlayer');
+    
+            function updateVideo1() {
+                const task = taskSelect1.value;
+                const object = objectSelect1.value;
+                const trajectory = trajectorySelect1.value;
+                const videoUrl = `./mfiles/videos/${task}_${object}_${trajectory}.mp4`;
+                videoSource1.src = videoUrl;
+                videoPlayer1.load();
+            }
+    
+            taskSelect1.addEventListener('change', updateVideo1);
+            objectSelect1.addEventListener('change', updateVideo1);
+            trajectorySelect1.addEventListener('change', updateVideo1);
+    
+            // Initial video load
+            updateVideo1();
+        </script>
+
+        <br><br>
+
+        <hr>
+        <h2>Point Bridge on Soft and Articulated Objects</h2>
+        <br><br>
+
+        We evaluate single-task Point Bridge policies on three tasks involving soft objects (towel) and articulated objects (drawer, oven).
+        Overall, Point Bridge achieves an 85% success rate across these tasks, highlighting its effectiveness beyond rigid-object manipulation.
+        We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
+        
+        Task: <select id="taskSelect2">
+            <option value="fold_towel">fold_towel</option>
+            <option value="close_drawer">close drawer</option>
+            <option value="bowl_in_oven">put bowl in oven</option>
+        </select>    
+        Trajectory: <select id="trajectorySelect2">
+            <option value="traj1">trajectory 1</option>
+            <option value="traj2">trajectory 2</option>
+        </select>
+    
+        <div class="video-container">
+            <video id="videoPlayer2" width="640" height="360" controls>
+                <source id="videoSource2" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <script>
+            const taskSelect2 = document.getElementById('taskSelect2');
+            const trajectorySelect2 = document.getElementById('trajectorySelect2');
+            const videoSource2 = document.getElementById('videoSource2');
+            const videoPlayer2 = document.getElementById('videoPlayer2');
+    
+            function updateVideo2() {
+                const task = taskSelect2.value;
+                const trajectory = trajectorySelect2.value;
+                const videoUrl = `./mfiles/videos/${task}_option1_${trajectory}.mp4`;
+                videoSource2.src = videoUrl;
+                videoPlayer2.load();
+            }
+    
+            taskSelect2.addEventListener('change', updateVideo2);
+            trajectorySelect2.addEventListener('change', updateVideo2);
+    
+            // Initial video load
+            updateVideo2();
+        </script>
+
+        <br><br>
+
+
+        <hr>
+        <h2>Point Bridge on held-out objects</h2>
+        <br><br>
+
+        We evaluate multi-task-task sim-real co-trained Point Bridge policies on a set of held-out objects.
+        Overall, Point Bridge achieves an 97% success rate across these tasks, highlighting its effectiveness in generalizing to unseen objects.
+        We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
+        
+        Task: <select id="taskSelect3">
+            <option value="stack_bowls_heldout">stack bowls</option>
+            <option value="bowl_on_plate_heldout">put bowl on plate</option>
+            <option value="mug_on_plate_heldout">put mug on plate</option>
+        </select>    
+        Object: <select id="objectSelect3">
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+        </select>    
+        Trajectory: <select id="trajectorySelect3">
+            <option value="traj1">trajectory 1</option>
+            <option value="traj2">trajectory 2</option>
+        </select>
+    
+        <div class="video-container">
+            <video id="videoPlayer3" width="640" height="360" controls>
+                <source id="videoSource3" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <script>
+            const taskSelect3 = document.getElementById('taskSelect3');
+            const objectSelect3 = document.getElementById('objectSelect3');
+            const trajectorySelect3 = document.getElementById('trajectorySelect3');
+            const videoSource3 = document.getElementById('videoSource3');
+            const videoPlayer3 = document.getElementById('videoPlayer3');
+    
+            function updateVideo3() {
+                const task = taskSelect3.value;
+                const object = objectSelect3.value;
+                const trajectory = trajectorySelect3.value;
+                const videoUrl = `./mfiles/videos/${task}_${object}_${trajectory}.mp4`;
+                videoSource3.src = videoUrl;
+                videoPlayer3.load();
+            }
+    
+            taskSelect3.addEventListener('change', updateVideo3);
+            objectSelect3.addEventListener('change', updateVideo3);
+            trajectorySelect3.addEventListener('change', updateVideo3);
+    
+            // Initial video load
+            updateVideo3();
+        </script>
+
+        <br><br>
+
+        <hr>
+        <h2>Point Bridge in the presence of background distractors</h2>
+        <br><br>
+
+        To evaluate the robustness of our scene filtering pipeline, we evaluate the zero-shot single-task sim-to-real transfer performance 
+        of Point Bridge with background distractors. Overall, Point Bridge, which incorporates scene filtering, maintains performance on par 
+        with the distractor-free scenario and exhibits strong robustness to background clutter. We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
+        
+        Task: <select id="taskSelect4">
+            <option value="stack_bowls_distractors">stack bowls</option>
+            <option value="bowl_on_plate_distractors">put bowl on plate</option>
+            <option value="mug_on_plate_distractors">put mug on plate</option>
+        </select>    
+        Trajectory: <select id="trajectorySelect4">
+            <option value="traj1">trajectory 1</option>
+            <option value="traj2">trajectory 2</option>
+        </select>
+    
+        <div class="video-container">
+            <video id="videoPlayer4" width="640" height="360" controls>
+                <source id="videoSource4" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <script>
+            const taskSelect4 = document.getElementById('taskSelect4');
+            const trajectorySelect4 = document.getElementById('trajectorySelect4');
+            const videoSource4 = document.getElementById('videoSource4');
+            const videoPlayer4 = document.getElementById('videoPlayer4');
+    
+            function updateVideo4() {
+                const task = taskSelect4.value;
+                const trajectory = trajectorySelect4.value;
+                const videoUrl = `./mfiles/videos/${task}_${trajectory}.mp4`;
+                videoSource4.src = videoUrl;
+                videoPlayer4.load();
+            }
+    
+            taskSelect4.addEventListener('change', updateVideo4);
+            trajectorySelect4.addEventListener('change', updateVideo4);
+    
+            // Initial video load
+            updateVideo4();
+        </script>
+
+        <br><br>
+
+
+    </section>
+
+    <section>
+        This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
+    </section>
+    
+
+
+</div>
+</body>
+</html>
